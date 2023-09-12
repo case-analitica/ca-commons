@@ -1,4 +1,4 @@
-package com.caseanalitica.model;
+package com.caseanalitica.commons;
 
 import java.util.List;
 

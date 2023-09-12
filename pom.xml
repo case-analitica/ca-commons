@@ -43,7 +43,10 @@
   </build>
 
   <distributionManagement>
-    <!-- Configurações de distribuição do pacote -->
+    <repository>
+      <id>github</id>
+      <url>https://maven.pkg.github.com/case-analitica/ca-commons</url>
+    </repository>
   </distributionManagement>
 
 </project>
