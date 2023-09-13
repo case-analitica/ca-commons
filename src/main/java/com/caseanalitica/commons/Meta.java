@@ -2,19 +2,19 @@ package com.caseanalitica.commons;
 
 public class Meta {
 
-    private Integer page;
+    private Integer pageIndex;
     private Integer pageSize;
     private Long totalPages;
     private String previousPage;
     private String nextPage;
     private Integer totalRecords;
 
-    public Integer getPage() {
-        return page;
+    public Integer getPageIndex() {
+        return pageIndex;
     }
 
-    public void setPage(Integer page) {
-        this.page = page;
+    public void setPageIndex(Integer pageIndex) {
+        this.pageIndex = pageIndex;
     }
 
     public Integer getPageSize() {
