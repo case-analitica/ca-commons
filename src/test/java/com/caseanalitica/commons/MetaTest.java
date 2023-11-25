@@ -13,8 +13,8 @@ public class MetaTest {
         meta.setPageSize(1);
         meta.setNextPage("2");
         meta.setPreviousPage("0");
-        meta.setTotalPages(3L);
-        meta.setTotalRecords(3);
+        meta.setTotalPages(3);
+        meta.setTotalRecords(3L);
 
         Assert.assertEquals("0", meta.getPageIndex().toString());
         Assert.assertEquals("1", meta.getPageSize().toString());

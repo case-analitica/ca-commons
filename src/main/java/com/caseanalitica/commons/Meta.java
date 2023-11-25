@@ -4,10 +4,10 @@ public class Meta {
 
     private Integer pageIndex;
     private Integer pageSize;
-    private Long totalPages;
+    private Integer totalPages;
     private String previousPage;
     private String nextPage;
-    private Integer totalRecords;
+    private Long totalRecords;
 
     public Integer getPageIndex() {
         return pageIndex;
@@ -25,11 +25,11 @@ public class Meta {
         this.pageSize = pageSize;
     }
 
-    public Long getTotalPages() {
+    public Integer getTotalPages() {
         return totalPages;
     }
 
-    public void setTotalPages(Long totalPages) {
+    public void setTotalPages(Integer totalPages) {
         this.totalPages = totalPages;
     }
 
@@ -49,11 +49,11 @@ public class Meta {
         this.nextPage = nextPage;
     }
 
-    public Integer getTotalRecords() {
+    public Long getTotalRecords() {
         return totalRecords;
     }
 
-    public void setTotalRecords(Integer totalRecords) {
+    public void setTotalRecords(Long totalRecords) {
         this.totalRecords = totalRecords;
     }
 }

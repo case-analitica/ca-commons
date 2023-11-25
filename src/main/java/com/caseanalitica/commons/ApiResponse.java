@@ -2,13 +2,13 @@ package com.caseanalitica.commons;
 
 import java.util.List;
 
-public class ApiResponse {
+public class ApiResponse<T> {
 
     private Integer code;
     private String status;
     private String message;
     private Meta meta;
-    private List<Object> data;
+    private List<T> data;
 
     public Integer getCode() {
         return code;
@@ -42,11 +42,11 @@ public class ApiResponse {
         this.meta = meta;
     }
 
-    public List<Object> getData() {
+    public List<T> getData() {
         return data;
     }
 
-    public void setData(List<Object> data) {
+    public void setData(List<T> data) {
         this.data = data;
     }
 }
