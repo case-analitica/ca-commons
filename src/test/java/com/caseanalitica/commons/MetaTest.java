@@ -6,7 +6,7 @@ import org.junit.Test;
 public class MetaTest {
 
     @Test
-    public void buildMetaSuccess() {
+    public void buildMetaSuccessWithoutParameters() {
 
         Meta meta = new Meta();
         meta.setPageIndex(0);
@@ -23,6 +23,19 @@ public class MetaTest {
         Assert.assertEquals("3", meta.getTotalPages().toString());
         Assert.assertEquals("3", meta.getTotalRecords().toString());
 
+    }
+
+    @Test
+    public void buildMetaSuccessWithParameters() {
+
+        Meta meta = new Meta(0, 1, 3, "0", "1", 3L);
+
+        Assert.assertEquals("0", meta.getPageIndex().toString());
+        Assert.assertEquals("1", meta.getPageSize().toString());
+        Assert.assertEquals("1", meta.getNextPage());
+        Assert.assertEquals("0", meta.getPreviousPage());
+        Assert.assertEquals("3", meta.getTotalPages().toString());
+        Assert.assertEquals("3", meta.getTotalRecords().toString());
 
     }
 

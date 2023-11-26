@@ -10,6 +10,17 @@ public class ApiResponse<T> {
     private Meta meta;
     private List<T> data;
 
+    public ApiResponse() {
+    }
+
+    public ApiResponse(Integer code, String status, String message, Meta meta, List<T> data) {
+        this.code = code;
+        this.status = status;
+        this.message = message;
+        this.meta = meta;
+        this.data = data;
+    }
+
     public Integer getCode() {
         return code;
     }
@@ -49,4 +60,6 @@ public class ApiResponse<T> {
     public void setData(List<T> data) {
         this.data = data;
     }
+
+
 }
