@@ -6,19 +6,16 @@ public class Response<T> {
 
     private ApiResponse<T> apiResponse;
 
-    public ApiResponse<T> ofSuccess(PageResponse pageResponse, List<T> data) {
+    public ApiResponse<T> ofSuccess(PaginationData paginationData, List<T> data) {
 
         this.apiResponse = new ApiResponse<>();
         Meta meta = new Meta();
 
-        meta.setTotalRecords(pageResponse.getTotalRecords());
-        meta.setTotalPages(pageResponse.getTotalPages());
-        meta.setPageIndex(pageResponse.getPageIndex());
-        meta.setPageSize(pageResponse.getPageSize());
+        meta.setTotalRecords(paginationData.totalRecords());
+        meta.setTotalPages(paginationData.totalPages());
+        meta.setPageIndex(paginationData.pageIndex());
+        meta.setPageSize(paginationData.pageSize());
 
-        apiResponse.setCode(pageResponse.getCode());
-        apiResponse.setStatus(pageResponse.getStatus());
-        apiResponse.setMessage(pageResponse.getMessage());
         apiResponse.setMeta(meta);
         apiResponse.setData(data);
 
@@ -26,16 +23,13 @@ public class Response<T> {
 
     }
 
-    public ApiResponse<T> ofError(PageResponse pageResponse) {
+    public ApiResponse<T> ofSuccess(List<T> data) {
 
         this.apiResponse = new ApiResponse<>();
-
-        apiResponse.setCode(pageResponse.getCode());
-        apiResponse.setStatus(pageResponse.getStatus());
-        apiResponse.setMessage(pageResponse.getMessage());
-        apiResponse.setData(List.of());
+        apiResponse.setData(data);
 
         return apiResponse;
 
     }
+
 }

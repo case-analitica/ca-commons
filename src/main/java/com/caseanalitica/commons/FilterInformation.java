@@ -2,7 +2,7 @@ package com.caseanalitica.commons;
 
 import java.util.Objects;
 
-public class PageInformationRequest {
+public class FilterInformation {
 
     private String filterName;
     private String filterValue;
@@ -11,9 +11,9 @@ public class PageInformationRequest {
     private String direction;
     private Integer pageSize;
 
-    public PageInformationRequest() {}
+    public FilterInformation() {}
 
-    public PageInformationRequest(String filterName, String filterValue, Integer page, String sort, String direction, Integer pageSize) {
+    public FilterInformation(String filterName, String filterValue, Integer page, String sort, String direction, Integer pageSize) {
         this.filterName = filterName;
         this.filterValue = filterValue;
         this.page = page;
@@ -74,7 +74,7 @@ public class PageInformationRequest {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        PageInformationRequest that = (PageInformationRequest) o;
+        FilterInformation that = (FilterInformation) o;
         return Objects.equals(filterName, that.filterName) && Objects.equals(filterValue, that.filterValue) && Objects.equals(page, that.page) && Objects.equals(sort, that.sort) && Objects.equals(direction, that.direction) && Objects.equals(pageSize, that.pageSize);
     }
 

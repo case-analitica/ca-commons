@@ -1,15 +1,12 @@
 package com.caseanalitica.commons.builder;
 
-import com.caseanalitica.commons.PageResponse;
+import com.caseanalitica.commons.PaginationData;
 
 public class PageResponseBuilder {
     private Long totalRecords;
     private int totalPages;
     private int pageIndex;
     private int pageSize;
-    private int code;
-    private String status;
-    private String message;
 
     public PageResponseBuilder totalRecords(Long totalRecords) {
         this.totalRecords = totalRecords;
@@ -31,22 +28,7 @@ public class PageResponseBuilder {
         return this;
     }
 
-    public PageResponseBuilder code(int code) {
-        this.code = code;
-        return this;
-    }
-
-    public PageResponseBuilder status(String status) {
-        this.status = status;
-        return this;
-    }
-
-    public PageResponseBuilder message(String message) {
-        this.message = message;
-        return this;
-    }
-
-    public PageResponse build() {
-        return new PageResponse(totalRecords, totalPages, pageIndex, pageSize, code, status, message);
+    public PaginationData build() {
+        return new PaginationData(totalRecords, totalPages, pageIndex, pageSize);
     }
 }

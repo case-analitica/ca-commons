@@ -7,19 +7,15 @@ public class Meta {
     private Integer pageIndex;
     private Integer pageSize;
     private Integer totalPages;
-    private String previousPage;
-    private String nextPage;
     private Long totalRecords;
 
     public Meta() {
     }
 
-    public Meta(Integer pageIndex, Integer pageSize, Integer totalPages, String previousPage, String nextPage, Long totalRecords) {
+    public Meta(Integer pageIndex, Integer pageSize, Integer totalPages, Long totalRecords) {
         this.pageIndex = pageIndex;
         this.pageSize = pageSize;
         this.totalPages = totalPages;
-        this.previousPage = previousPage;
-        this.nextPage = nextPage;
         this.totalRecords = totalRecords;
     }
 
@@ -47,22 +43,6 @@ public class Meta {
         this.totalPages = totalPages;
     }
 
-    public String getPreviousPage() {
-        return previousPage;
-    }
-
-    public void setPreviousPage(String previousPage) {
-        this.previousPage = previousPage;
-    }
-
-    public String getNextPage() {
-        return nextPage;
-    }
-
-    public void setNextPage(String nextPage) {
-        this.nextPage = nextPage;
-    }
-
     public Long getTotalRecords() {
         return totalRecords;
     }
@@ -76,12 +56,12 @@ public class Meta {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Meta meta = (Meta) o;
-        return Objects.equals(pageIndex, meta.pageIndex) && Objects.equals(pageSize, meta.pageSize) && Objects.equals(totalPages, meta.totalPages) && Objects.equals(previousPage, meta.previousPage) && Objects.equals(nextPage, meta.nextPage) && Objects.equals(totalRecords, meta.totalRecords);
+        return Objects.equals(pageIndex, meta.pageIndex) && Objects.equals(pageSize, meta.pageSize) && Objects.equals(totalPages, meta.totalPages) && Objects.equals(totalRecords, meta.totalRecords);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(pageIndex, pageSize, totalPages, previousPage, nextPage, totalRecords);
+        return Objects.hash(pageIndex, pageSize, totalPages, totalRecords);
     }
 
     @Override
@@ -90,8 +70,6 @@ public class Meta {
                 "pageIndex=" + pageIndex +
                 ", pageSize=" + pageSize +
                 ", totalPages=" + totalPages +
-                ", previousPage='" + previousPage + '\'' +
-                ", nextPage='" + nextPage + '\'' +
                 ", totalRecords=" + totalRecords +
                 '}';
     }

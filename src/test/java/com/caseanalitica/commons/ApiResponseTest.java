@@ -11,15 +11,9 @@ public class ApiResponseTest {
     public void buildApiResponseSuccessWithoutParameters() {
 
         ApiResponse<String> apiResponse = new ApiResponse<>();
-        apiResponse.setCode(200);
-        apiResponse.setStatus("success");
-        apiResponse.setMessage("customer-api-ok");
         apiResponse.setMeta(new Meta());
         apiResponse.setData(List.of());
 
-        Assert.assertEquals("200", apiResponse.getCode().toString());
-        Assert.assertEquals("success", apiResponse.getStatus());
-        Assert.assertEquals("customer-api-ok", apiResponse.getMessage());
         Assert.assertNotNull(apiResponse.getMeta());
         Assert.assertNotNull(apiResponse.getData());
 
@@ -28,11 +22,8 @@ public class ApiResponseTest {
     @Test
     public void buildApiResponseSuccessWithParameters() {
 
-        ApiResponse<String> apiResponse = new ApiResponse<>(200, "success", "customer-api-ok", new Meta(), List.of());
+        ApiResponse<String> apiResponse = new ApiResponse<>(new Meta(), List.of());
 
-        Assert.assertEquals("200", apiResponse.getCode().toString());
-        Assert.assertEquals("success", apiResponse.getStatus());
-        Assert.assertEquals("customer-api-ok", apiResponse.getMessage());
         Assert.assertNotNull(apiResponse.getMeta());
         Assert.assertNotNull(apiResponse.getData());
 
