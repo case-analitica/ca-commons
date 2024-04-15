@@ -2,28 +2,28 @@ package com.caseanalitica.commons.builder;
 
 import com.caseanalitica.commons.PaginationData;
 
-public class PageResponseBuilder {
+public class PaginationDataBuilder {
     private Long totalRecords;
     private int totalPages;
     private int pageIndex;
     private int pageSize;
 
-    public PageResponseBuilder totalRecords(Long totalRecords) {
+    public PaginationDataBuilder totalRecords(Long totalRecords) {
         this.totalRecords = totalRecords;
         return this;
     }
 
-    public PageResponseBuilder totalPages(int totalPages) {
+    public PaginationDataBuilder totalPages(int totalPages) {
         this.totalPages = totalPages;
         return this;
     }
 
-    public PageResponseBuilder pageIndex(int pageIndex) {
+    public PaginationDataBuilder pageIndex(int pageIndex) {
         this.pageIndex = pageIndex;
         return this;
     }
 
-    public PageResponseBuilder pageSize(int pageSize) {
+    public PaginationDataBuilder pageSize(int pageSize) {
         this.pageSize = pageSize;
         return this;
     }

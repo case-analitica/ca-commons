@@ -1,6 +1,6 @@
 package com.caseanalitica.commons;
 
-import com.caseanalitica.commons.builder.PageResponseBuilder;
+import com.caseanalitica.commons.builder.PaginationDataBuilder;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -9,7 +9,7 @@ public class PaginationDataTest {
     @Test
     public void buildPageResponse() {
 
-        PaginationData paginationData = new PageResponseBuilder()
+        PaginationData paginationData = new PaginationDataBuilder()
                 .totalPages(1)
                 .pageIndex(1)
                 .totalRecords(1L)
