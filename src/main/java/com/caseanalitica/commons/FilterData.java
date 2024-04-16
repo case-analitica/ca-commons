@@ -2,21 +2,22 @@ package com.caseanalitica.commons;
 
 import java.util.Objects;
 
-public class FilterInformation {
+public class FilterData {
 
     private String filterName;
     private String filterValue;
-    private Integer page;
+    private Integer pageIndex;
     private String sort;
     private String direction;
     private Integer pageSize;
 
-    public FilterInformation() {}
+    public FilterData() {
+    }
 
-    public FilterInformation(String filterName, String filterValue, Integer page, String sort, String direction, Integer pageSize) {
+    public FilterData(String filterName, String filterValue, Integer pageIndex, String sort, String direction, Integer pageSize) {
         this.filterName = filterName;
         this.filterValue = filterValue;
-        this.page = page;
+        this.pageIndex = pageIndex;
         this.sort = sort;
         this.direction = direction;
         this.pageSize = pageSize;
@@ -38,12 +39,12 @@ public class FilterInformation {
         this.filterValue = filterValue;
     }
 
-    public Integer getPage() {
-        return page;
+    public Integer getPageIndex() {
+        return pageIndex;
     }
 
-    public void setPage(Integer page) {
-        this.page = page;
+    public void setPageIndex(Integer pageIndex) {
+        this.pageIndex = pageIndex;
     }
 
     public String getSort() {
@@ -74,13 +75,13 @@ public class FilterInformation {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        FilterInformation that = (FilterInformation) o;
-        return Objects.equals(filterName, that.filterName) && Objects.equals(filterValue, that.filterValue) && Objects.equals(page, that.page) && Objects.equals(sort, that.sort) && Objects.equals(direction, that.direction) && Objects.equals(pageSize, that.pageSize);
+        FilterData that = (FilterData) o;
+        return Objects.equals(filterName, that.filterName) && Objects.equals(filterValue, that.filterValue) && Objects.equals(pageIndex, that.pageIndex) && Objects.equals(sort, that.sort) && Objects.equals(direction, that.direction) && Objects.equals(pageSize, that.pageSize);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(filterName, filterValue, page, sort, direction, pageSize);
+        return Objects.hash(filterName, filterValue, pageIndex, sort, direction, pageSize);
     }
 
     @Override
@@ -88,7 +89,7 @@ public class FilterInformation {
         return "PageInformationRequest{" +
                 "filterName='" + filterName + '\'' +
                 ", filterValue='" + filterValue + '\'' +
-                ", page=" + page +
+                ", page=" + pageIndex +
                 ", sort='" + sort + '\'' +
                 ", direction='" + direction + '\'' +
                 ", pageSize=" + pageSize +
